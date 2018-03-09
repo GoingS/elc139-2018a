@@ -8,7 +8,7 @@ Nome: < preencha seu nome aqui >
 | Característica                                            | Computador no TOP500  | Meu computador  |
 | --------------------------------------------------------- | --------------------- | --------------- |
 | Nome/Título                                               | BlueGene/Q            | PC do Victor    |
-| Imagem (foto, diagrama, screenshot, etc.)                 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mira_-_Blue_Gene_Q_at_Argonne_National_Laboratory_-_Skin.jpg/1920px-Mira_-_Blue_Gene_Q_at_Argonne_National_Laboratory_-_Skin.jpg" width="48"> | <img src="https://i.imgur.com/kRj2PMK.jpg" width="48">|
+| Imagem (foto, diagrama, screenshot, etc.)                 | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Mira_-_Blue_Gene_Q_at_Argonne_National_Laboratory_-_Skin.jpg/1920px-Mira_-_Blue_Gene_Q_at_Argonne_National_Laboratory_-_Skin.jpg" width="150"> | <img src="https://i.imgur.com/kRj2PMK.jpg" width="150">|
 | Classificação de Flynn                                    | MIMD                  | MIMD            |
 | Memória: compartilhada, distribuída ou ambas?             | Distribuída           | Compartilhada   |
 | Número total de núcleos de processamento                  | 81.920                | 4               |
