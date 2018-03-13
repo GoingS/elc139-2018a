@@ -18,9 +18,12 @@ Nome: < preencha seu nome aqui >
 | Tipo(s) de interconexão entre os núcleos/processadores    |                       |                 |
 | Desempenho Linpack                                        | 894.439 TFlop/s       | ~20 GFlop/s     |
 
+Linpack: https://i.imgur.com/LmA2GnL.png
+
 ### Referências
 - Wikipedia. Blue Gene. https://en.wikipedia.org/wiki/Blue_Gene#Blue_Gene/Q
 - Wikipedia. Shared Memory. https://en.wikipedia.org/wiki/Shared_memory
 - Wikipedia. Distributed Memory. https://en.wikipedia.org/wiki/Distributed_memory
 - Wikipedia. Flynn's Taxonomy. https://en.wikipedia.org/wiki/Flynn%27s_taxonomy
 - Top500. Top500 list. https://www.top500.org/
+- Intel. Linpack. https://software.intel.com/en-us/articles/intel-linpack-benchmark-download-license-agreement
