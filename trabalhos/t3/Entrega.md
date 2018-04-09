@@ -26,6 +26,7 @@ O número de thread a ser usado é definido pelo argumento na chamada do program
 
 4. 
 Vetor com 1 milhão de dimensões
+
 |Threads| Rep. | Tempo | Aceler |
 |-------|------|-------|--------|
 | 1 	| 2000 | 7.3s  | -	|
