@@ -3,21 +3,21 @@
 ## Pthreads
 
 1. 
-### Particionamento:
+Particionamento:
 A operação pode ser particionada sem grandes complicações. Se um vetor de 1000 dimensões é calculado por 2 threads, a primeira cuida das primeiras 500 casas e a segunda cuida do restante.
 
 int start = offset*wsize;
 int end = start + wsize;
 
-### Comunicação: 
+Comunicação: 
 É feito o somatório dos resultados de cada thread no final da execução.
 
 dotdata.c += mysum;
 
-### Aglomeração:
+Aglomeração:
 As threads são criadas no começo pelo número definido e executam independentemente de si. No final, a soma de cada uma é juntada para o resultado final.
 
-### Mapeamento:
+Mapeamento:
 O número de thread a ser usado é definido pelo argumento na chamada do programa.
 
 2. A aceleração de um vetor com 1 milhão de casas com 2 threads é 1.7618.
@@ -47,5 +47,18 @@ Vetor com 1 milhão de dimensões
 
 ## OpenMP
 
+2. 
+Novos tempos com o novo algoritmo:
 
-## Referências
+|Threads| Rep. | Tempo | Aceler |
+|-------|------|-------|--------|
+| 1 	| 2000 | 7.1s  | -	|
+| 1	| 5000 | 18.4s | -	|
+| 2	| 2000 | 4.0s  | 1.77	|
+| 2	| 5000 | 9.9s  | 1.85	|
+| 4	| 2000 | 3.3s  | 2.15	|
+| 4	| 5000 | 8.3s  | 2.21	|
+| 8	| 2000 | 3.4s  | 2.08	|
+| 8	| 5000 | 8.2s  | 2.24	|
+| 16	| 2000 | 3.3s  | 2.15	|
+| 16	| 5000 | 7.9s  | 2.32	|
