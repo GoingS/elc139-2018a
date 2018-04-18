@@ -5,8 +5,8 @@
 [programa.c](programa.c)
 
 ## Exemplo de saída
-Vetor sem mutex 1
 ```
+Vetor sem mutex 1
 AAAAAAAAAAAAAAAAAAAACBCBCBBCBCBCBCB-BCBCBCBBCCCCCCCC--------
 Vetor sem mutex 2
 BCBBCBCCBCBCBCCBCBBCBBCBBCBCCCCAAAAAAAAAAAAAAAAAAAA---------
