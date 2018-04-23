@@ -113,9 +113,10 @@ Forest::grow()
 void 
 Forest::grow_thread()
 {
-#pragma omp parallel for schedule(static) num_threads(NUM_THREADS)
+#pragma omp parallel for schedule(dynamic) num_threads(NUM_THREADS)
    for (int i = 0; i < size; i++)
       for (int j = 0; j < size; j++)
+#pragma omp critical
          t[i][j] = Unburnt;
 }
 

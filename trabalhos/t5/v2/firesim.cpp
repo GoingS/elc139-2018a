@@ -1,4 +1,3 @@
-//  
 // Simulação de incêndio em uma floresta.
 // Baseada no código proposto por David Joiner.
 //
@@ -47,13 +46,13 @@ main(int argc, char* argv[])
     
 
    try {
-	//calcular o tempo
+   //calcular o tempo
    double starttime = omp_get_wtime();
 
-	// Aloca uma floresta pra cada thread
-	Forest** forest = (Forest**) malloc(sizeof(Forest*) * NUM_THREADS);
-	for(int i = 0; i < NUM_THREADS; i++)
-		forest[i] = new Forest(forest_size);
+   // Aloca uma floresta para cada thread
+   Forest** forest = (Forest**) malloc(sizeof(Forest*) * NUM_THREADS);
+   for(int i = 0; i < NUM_THREADS; i++)
+      forest[i] = new Forest(forest_size);
 
       Random rand;
 
@@ -66,30 +65,30 @@ main(int argc, char* argv[])
 
       // para cada probabilidade, calcula o percentual de árvores queimadas
       for (int ip = 0; ip < n_probs; ip++) {
-
          prob_spread[ip] = prob_min + (double) ip * prob_step;
          percent_burned[ip] = 0.0;
          rand.setSeed(base_seed+ip); // nova seqüência de números aleatórios
 
          // executa vários experimentos
-#pragma omp parallel for schedule(static) num_threads(NUM_THREADS) shared(percent_burned, prob_spread, rand)
+#pragma omp parallel for schedule(dynamic) num_threads(NUM_THREADS) shared(percent_burned, prob_spread, rand)
          for (int it = 0; it < n_trials; it++) {
-		int forest_index = omp_get_thread_num();
+         int forest_index = omp_get_thread_num();
             // queima floresta até o fogo apagar
             forest[forest_index]->burnUntilOut(forest[forest_index]->centralTree(), prob_spread[ip], rand);
 #pragma omp critical
             percent_burned[ip] += forest[forest_index]->getPercentBurned();
-         }
 
-         // calzzcula média dos percentuais de árvores queimadas
+}
+
+         // calcula média dos percentuais de árvores queimadas
          percent_burned[ip] /= n_trials;
 
          // mostra resultado para esta probabilidade
          printf("[%d] %lf, %lf\n",ip, prob_spread[ip], percent_burned[ip]);
       }
 
-	double endtime = omp_get_wtime();
-	printf("\nTempo decorrido: %.2f segundos\n", endtime - starttime);
+   double endtime = omp_get_wtime();
+   printf("\nTempo decorrido: %.2f segundos\n", endtime - starttime);
       delete[] prob_spread;
       delete[] percent_burned;
    }
