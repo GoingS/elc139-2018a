@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 #include "nqueens.h"
+#include <omp.h>
 
 /* Checking information */
 static int solutions[] = {
@@ -72,7 +73,9 @@ void nqueens(int size, int *solutions) {
 	
 	count = 0;
 	
+#pragma omp parallel for schedule(dynamic, 1) num_threads(4) private(i, position) shared(count)
 	for(i=0; i<size; i++) {
+
 		int j;
 		position = (int *) malloc(size * sizeof(int));
 		position[0] = i;
@@ -86,8 +89,8 @@ void nqueens(int size, int *solutions) {
 				queen_number++;
 			
 				if(queen_number == size) {
+#pragma omp critical
 					count += 1;
-					
 					position[queen_number-1] = -1;
 					queen_number -= 2;
 				}
