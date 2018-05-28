@@ -5,6 +5,7 @@
 
 1. Testes do programa [vetor.c](vetor.c)
 (Um processo é usado para fazer a soma, por isso são 3, 5 e 9 e não 2, 4 e 8)
+
 | NP 		| Tamanho vetor(vezes processos)	| Repetições	| Tempo	|
 |-----------|-----------------------------------|---------------|-------|
 | 3			| 2000								| 20,000        | 0.2s	|
