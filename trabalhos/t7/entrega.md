@@ -14,3 +14,18 @@
 | 5			| 2000								| 200,000       | 3.9s	|
 | 9			| 2000								| 20,000        | 1.0s	|
 | 9			| 2000								| 200,000       | 6.6s	|
+
+2. Exemplo de execução do programa [pipeline.c](pipeline.c):
+```
+mpiexec -np 5 ./pipeline
+4 receving from 3
+1 receving from 0
+msg: 1
+2 receving from 1
+msg: 2
+3 receving from 2
+msg: 3
+msg: 4
+O resultado final eh 4
+```
+
