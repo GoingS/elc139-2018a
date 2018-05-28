@@ -29,3 +29,6 @@ msg: 4
 O resultado final eh 4
 ```
 
+3. O primeiro programa usa a tag igual a seu rank. Assim cada processo tem uma tag diferente e nunca vai receber mensagem ou conseguir enviar, pois todas as tags são diferentes.
+
+O segundo programa não estava finalizando apropriadamente. A função MPI_Finalize não estava sendo chamada.
